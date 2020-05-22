@@ -45,8 +45,8 @@ namespace UniversityStudentsApp.Controllers
                 courses = courses.Where(s => s.Title.Contains(searchProgramme));
             }
 
-            courses = courses.Include(m => m.FirstTeacher);//.ThenInclude(m => m.FirstTeacherCourses);
-            courses = courses.Include(m => m.SecondTeacher);//.ThenInclude(m => m.SecondTeacherCourses);
+            courses = courses.Include(m => m.FirstTeacher);
+            courses = courses.Include(m => m.SecondTeacher);
             courses = courses.Include(m => m.Students);
 
             return View(await courses.AsNoTracking().ToListAsync());
@@ -63,7 +63,7 @@ namespace UniversityStudentsApp.Controllers
             var course = await _context.Courses
                 .Include(c => c.FirstTeacher)
                 .Include(c => c.SecondTeacher)
-                .Include(c => c.Students)
+                .Include(c => c.Students).ThenInclude(c => c.Student)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (course == null)
             {
@@ -112,6 +112,7 @@ namespace UniversityStudentsApp.Controllers
             {
                 return NotFound();
             }
+
             ViewData["FirstTeacherId"] = new SelectList(_context.Teacher, "Id", "FullName", course.FirstTeacherId);
             ViewData["SecondTeacherId"] = new SelectList(_context.Teacher, "Id", "FullName", course.SecondTeacherId);
             return View(course);
@@ -165,6 +166,7 @@ namespace UniversityStudentsApp.Controllers
             var course = await _context.Courses
                 .Include(c => c.FirstTeacher)
                 .Include(c => c.SecondTeacher)
+                .Include(c => c.Students).ThenInclude(c => c.Student)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (course == null)
             {
@@ -188,6 +190,22 @@ namespace UniversityStudentsApp.Controllers
         private bool CourseExists(int id)
         {
             return _context.Courses.Any(e => e.Id == id);
+        }
+
+        public async Task<IActionResult> GetCoursеById (int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var course = await _context.Courses
+                .Include(c => c.FirstTeacher)
+                .Include(c => c.SecondTeacher)
+                .Include(c => c.Students)
+                .FirstOrDefaultAsync(c => c.Id == id);
+
+            return View(course);
         }
     }
 }

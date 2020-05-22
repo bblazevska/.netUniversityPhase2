@@ -158,7 +158,10 @@ namespace UniversityStudentsApp.Controllers
             }
 
             var teacher = await _context.Teacher
+                .Include(p => p.FirstTeacherCourses)
+                .Include(p => p.SecondTeacherCourses)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (teacher == null)
             {
                 return NotFound();
@@ -182,5 +185,24 @@ namespace UniversityStudentsApp.Controllers
         {
             return _context.Teacher.Any(e => e.Id == id);
         }
+
+        public async Task<IActionResult> GetTeacherById (int? id, int? courseId)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+
+            var teacher = await _context.Teacher
+                .Include(p => p.FirstTeacherCourses)
+                    .ThenInclude(p => p.Students).ThenInclude(p => p.Student)
+                .Include(p => p.SecondTeacherCourses)
+                    .ThenInclude(p => p.Students).ThenInclude(p => p.Student)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            return View(teacher);
+        }
+            
     }
 }

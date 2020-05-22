@@ -366,3 +366,5 @@ C:\Users\bojan\Desktop\.netUniversityPhase2\UniversityStudentsApp\obj\Debug\netc
 C:\Users\bojan\Desktop\.netUniversityPhase2\UniversityStudentsApp\obj\Debug\netcoreapp3.1\UniversityStudentsApp.dll
 C:\Users\bojan\Desktop\.netUniversityPhase2\UniversityStudentsApp\obj\Debug\netcoreapp3.1\UniversityStudentsApp.pdb
 C:\Users\bojan\Desktop\.netUniversityPhase2\UniversityStudentsApp\obj\Debug\netcoreapp3.1\UniversityStudentsApp.genruntimeconfig.cache
+C:\Users\bojan\Desktop\.netUniversityPhase2\UniversityStudentsApp\obj\Debug\netcoreapp3.1\Razor\Views\Teachers\GetTeacherById.cshtml.g.cs
+C:\Users\bojan\Desktop\.netUniversityPhase2\UniversityStudentsApp\obj\Debug\netcoreapp3.1\Razor\Views\Courses\GetCoursеById.cshtml.g.cs
