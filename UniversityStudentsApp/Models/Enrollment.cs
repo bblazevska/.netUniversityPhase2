@@ -37,7 +37,7 @@ namespace UniversityStudentsApp.Models
 
         public int? ProjectPoints { get; set; }
 
-        public int? AditionalPoints { get; set; }
+        public int? AdditionalPoints { get; set; }
 
         public DateTime? FinishDate { get; set; }
 

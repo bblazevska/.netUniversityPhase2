@@ -368,3 +368,7 @@ C:\Users\bojan\Desktop\.netUniversityPhase2\UniversityStudentsApp\obj\Debug\netc
 C:\Users\bojan\Desktop\.netUniversityPhase2\UniversityStudentsApp\obj\Debug\netcoreapp3.1\UniversityStudentsApp.genruntimeconfig.cache
 C:\Users\bojan\Desktop\.netUniversityPhase2\UniversityStudentsApp\obj\Debug\netcoreapp3.1\Razor\Views\Teachers\GetTeacherById.cshtml.g.cs
 C:\Users\bojan\Desktop\.netUniversityPhase2\UniversityStudentsApp\obj\Debug\netcoreapp3.1\Razor\Views\Courses\GetCoursеById.cshtml.g.cs
+C:\Users\bojan\Desktop\.netUniversityPhase2\UniversityStudentsApp\obj\Debug\netcoreapp3.1\Razor\Views\Enrollments\GetCoursesByStudent.cshtml.g.cs
+C:\Users\bojan\Desktop\.netUniversityPhase2\UniversityStudentsApp\obj\Debug\netcoreapp3.1\Razor\Views\Enrollments\GetStudentByEnrollmentId.cshtml.g.cs
+C:\Users\bojan\Desktop\.netUniversityPhase2\UniversityStudentsApp\obj\Debug\netcoreapp3.1\Razor\Views\Enrollments\GetStudentsByTeacherCourse.cshtml.g.cs
+C:\Users\bojan\Desktop\.netUniversityPhase2\UniversityStudentsApp\obj\Debug\netcoreapp3.1\Razor\Views\Enrollments\TeacherStudentChange.cshtml.g.cs
